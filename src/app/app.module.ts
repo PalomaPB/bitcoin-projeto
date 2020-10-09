@@ -9,12 +9,13 @@ import { HomeComponent } from '../home/home.component';
 import { RepositoriosComponent } from '../repositorios/repositorios.component';
 import { BitcoinComponent } from '../bitcoin/bitcoin.component';
 import { HttpClientModule } from '@angular/common/http';
-import { BitcoinService } from '../bitcoin.service';
+import { CommonModule } from '@angular/common';
+import { BitcoinService } from './bitcoin.service';
 
 @NgModule({
   imports:      
-  [ 
-    BrowserModule, 
+  [ BrowserModule, 
+    CommonModule,
     FormsModule, 
     HttpClientModule,
     RouterModule.forRoot ([
@@ -24,6 +25,6 @@ import { BitcoinService } from '../bitcoin.service';
   ])],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [BitcoinService]
+  providers: [ BitcoinService ]
 })
 export class AppModule { }

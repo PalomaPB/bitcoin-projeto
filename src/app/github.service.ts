@@ -23,9 +23,9 @@ export class GithubService {
   purl = "https://api.github.com/users/PalomaPB/repos";
   surl = "https://api.github.com/users/stephaniecasantos/repos";
   
-  itemsp = [];
-  itemss = [];
-
+  itemsp = []; //lista de gits da Paloma
+  itemss = []; //lista de gits da Stephanie
+  //Foi feito separado para que fosse possível separar as tabelas mostradas na tela
 
   lista = [];
 
@@ -34,6 +34,7 @@ export class GithubService {
   constructor(private http: HttpClient) { }
 
   update(){
+    //pega os items da API e insere no array
     this.http.get(this.purl).toPromise().then(data => {
       for(let key in data){
         if(data.hasOwnProperty(key)){

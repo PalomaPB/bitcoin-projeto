@@ -34,9 +34,22 @@
 
     <h2>Valor em Dolar</h2>
     <div>{{this.getCurrentPrice().bpi.USD.rate}}</div>
-    <hr>
+    
   </div>
 
-
-  
+  <h2 class="mt-5 mb-3">GitHub Paloma</h2>
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th>Nome</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of github.items">
+        <td>{{item.name}}</td>
+        <td>{{item.url}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

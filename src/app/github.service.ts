@@ -19,6 +19,7 @@ interface Dados{
 export class GithubService {
   paloma: Response;
   purl = "https://api.github.com/users/PalomaPB/repos";
+  //surl = "https://api.github.com/users/stephaniecasantos/repos";
   items = [];
   lista = [];
 
@@ -30,9 +31,17 @@ export class GithubService {
     this.http.get(this.purl).toPromise().then(data => {
       for(let key in data){
         if(data.hasOwnProperty(key)){
-          this.items.push(data[ke])
+          this.items.push(data[key])
         }
       }
-    })
+    });
+
+    /*this.http.get(this.surl).toPromise().then(data =>{
+      for(let key in data){
+        if(data.hasOwnProperty(key)){
+          this.items.push(data[key])
+        }
+      }
+    });*/
   }
 }

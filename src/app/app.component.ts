@@ -19,6 +19,10 @@ export class AppComponent  {
     return this.github.paloma;
   }
 
+  getStephanieGit(){
+    return this.github.stephanie;
+  }
+
   getCurrentPrice(){
     return this.bitcoinService.currentPrice;
   }

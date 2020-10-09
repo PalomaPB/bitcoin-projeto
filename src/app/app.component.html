@@ -18,7 +18,7 @@
   </div>
 </nav>-->
 
-<div class="container-fluid">
+<div class="m-4">
   <div *ngIf="getCurrentPrice()">
     <h2>Data/Hora</h2>
     <div>{{this.getCurrentPrice().time.updated}}</div>
@@ -46,7 +46,23 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of github.items">
+      <tr *ngFor="let item of github.itemsp">
+        <td>{{item.name}}</td>
+        <td>{{item.url}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="mt-5 mb-3">GitHub Stephanie</h2>
+  <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr class="text-center">
+        <th>Nome</th>
+        <th>URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of github.itemss">
         <td>{{item.name}}</td>
         <td>{{item.url}}</td>
       </tr>

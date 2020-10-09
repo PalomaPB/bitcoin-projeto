@@ -18,9 +18,15 @@ interface Dados{
 @Injectable()
 export class GithubService {
   paloma: Response;
+  stephanie: Response;
+
   purl = "https://api.github.com/users/PalomaPB/repos";
-  //surl = "https://api.github.com/users/stephaniecasantos/repos";
-  items = [];
+  surl = "https://api.github.com/users/stephaniecasantos/repos";
+  
+  itemsp = [];
+  itemss = [];
+
+
   lista = [];
 
   updateList: Array<Dados> = [];
@@ -31,17 +37,17 @@ export class GithubService {
     this.http.get(this.purl).toPromise().then(data => {
       for(let key in data){
         if(data.hasOwnProperty(key)){
-          this.items.push(data[key])
+          this.itemsp.push(data[key])
         }
       }
     });
 
-    /*this.http.get(this.surl).toPromise().then(data =>{
+    this.http.get(this.surl).toPromise().then(data =>{
       for(let key in data){
         if(data.hasOwnProperty(key)){
-          this.items.push(data[key])
+          this.itemss.push(data[key])
         }
       }
-    });*/
+    });
   }
 }

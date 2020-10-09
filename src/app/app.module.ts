@@ -11,6 +11,7 @@ import { BitcoinComponent } from '../bitcoin/bitcoin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { BitcoinService } from './bitcoin.service';
+import { GithubService } from './github.service';
 
 @NgModule({
   imports:      
@@ -25,6 +26,6 @@ import { BitcoinService } from './bitcoin.service';
   ])],
   declarations: [ AppComponent, HelloComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [ BitcoinService ]
+  providers: [ BitcoinService, GithubService ]
 })
 export class AppModule { }

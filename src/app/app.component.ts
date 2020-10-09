@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { BitcoinService } from './bitcoin.service';
 
 @Component({
   selector: 'my-app',
@@ -6,7 +7,18 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular ' + VERSION.major;
 
-  constructor() { }
+  constructor(private bitcoinService: BitcoinService) { }
+
+  ngOnInit() {
+    this.update();
+  }
+
+  getCurrentPrice(){
+    return this.bitcoinService.currentPrice;
+  }
+
+  update(){
+    this.bitcoinService.update();
+  }
 }

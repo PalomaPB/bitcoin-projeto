@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+//interface será utilizada para guardar os dados da API
 interface Response{
   name: string;
   url: string;
@@ -10,6 +11,7 @@ interface Response{
   }
 }
 
+//interface que irá armazenar a nome e a url do github
 interface Dados{
     name: string;
     url: string;
@@ -20,8 +22,8 @@ export class GithubService {
   paloma: Response;
   stephanie: Response;
 
-  purl = "https://api.github.com/users/PalomaPB/repos";
-  surl = "https://api.github.com/users/stephaniecasantos/repos";
+  purl = "https://api.github.com/users/PalomaPB/repos"; //url da API para pegar o git da Paloma
+  surl = "https://api.github.com/users/stephaniecasantos/repos"; // url da API para pegar o git a Stephanie
   
   itemsp = []; //lista de gits da Paloma
   itemss = []; //lista de gits da Stephanie
